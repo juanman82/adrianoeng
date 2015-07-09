@@ -1,4 +1,4 @@
-
+{% load staticfiles %}
 <!DOCTYPE HTML>
 
 <html>
@@ -11,9 +11,10 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!--[if lte IE 8]><script src="href="{% static 'js/ie/html5shiv.js' %}"></script><![endif]-->
 
-		<link rel="stylesheet" href="assets/css/main.css" />
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"  type="text/css" />
 
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
@@ -31,19 +32,19 @@
 
 				<header id="header">
 
-					<h1 id="logo"><a href="index.html">ADRIANO ENGINEERING</a></h1>
+					<h1 id="logo"><a href="inicio">ADRIANO ENGINEERING</a></h1>
 
 					<nav id="nav">
 
 						<ul>
 
-							<li class="current"><a href="index.html">Inicio</a></li>
+							<li class="current"><a href="../inicio">Inicio</a></li>
 
-							<li class="menu"><a href="sobrenosotros.html">Sobre Nosotros</a></li>
+							<li class="menu"><a href="../nosotros">Sobre Nosotros</a></li>
 
                             <li class="submenu">
 
-								<a href="ingenieriadecontrol.html">Productos y Servicios</a>
+								<a href="../ingenieriadecontrol">Productos y Servicios</a>
 
 								<ul>
 
@@ -57,8 +58,8 @@
 
                             <li><a href="contacto.html">Contacto</a></li>
 
-                            <a href="index.html"><img src="images/flag-mexico.png" alt="espanol" width="20" height="20"></a>
-                          <img src="images/flag-united-states.png" alt="espanol" width="20" height="20">
+                            <a href="index.html"><img src="{% static "images/flag-mexico.png" %}" alt="espanol" width="20" height="20"></a>
+                          <img src="{% static "images/flag-united-states.png" %}" alt="espanol" width="20" height="20">
 						</ul>
 					</nav>
 
@@ -69,161 +70,10 @@
 		</section>
 
 <!-- Main -->
-				<article id="main">
 
-					<header class="special container">
 
-						<span class="icon fa-mobile"></span>
-
-					  <h2>SOBRE NOSOTROS</h2>
-
-					  <p>SOMOS UNA EMPRESA 100% MEXICANA DEDICADA A LA INVESTIGACIÓN CIENTÍFICA, INNOVACIÓN TECNOLÓGICA Y DESARROLLO DE CAPITAL HUMANO PARA LA GENERACIÓN DE PRODUCTOS Y SOLUCIONES DE ALTO NIVEL AGREGADO.</p>
-
-				  </header>
-
-
-
-					<!-- One -->
-
-						<section class="wrapper style4 container">
-
-
-
-							<!-- Content -->
-
-								<div class="content">
-
-									<section>
-
-										<a href="#" class="image featured"><img src="images/sobrenosotros1.jpg" alt="" /></a>
-
-										<header>
-
-											<h3><strong>ACERCA DE NOSOTROS</strong></h3>
-
-										</header>
-
-										<p>Somos una empresa 100% mexicana dedicada a la investigación científica, innovación tecnológica y desarrollo de capital humano para la generación de productos y soluciones de alto nivel agregado. </p>
-										<p>Estamos formados por un equipo de ingeníeros altamente calificados con estudios de Maestría y Doctorado, certificaciones internacionales y con amplia experiencia en empresas nacinales y extranjeras líderes en la industria con presencia global.</p>
-									  <p>Contamos con el Registro Nacional de Instituciones y Empresas Científicas y Tecnológicas del CONACYT (Consejo Nacional de Ciencia y Tecnología). </p>
-										<p><strong>MISIÓN:</strong> Diseñar y desarrollar productos y servicios de alto valor agregado para incrementar la productividad y competitividad de nuestros clientes mediante soluciones de alta tecnología bajo el cumplimiento de metodologías, normas y estándares de reconocimiento internacional. </p>
-										<p><strong>VISIÓN:</strong> Evolucionar como una empresa Mexicana líder en la Investigación y Desarrollo de nuevas tecnologías que generen soluciones, productos y servicios para satisfacer las necesidades industriales de nuestro país y el resto del mundo; teniendo como base la capitalización y desarrollo del talento mexicano.									</p>
-									</section>
-
-								</div>
-
-						</section>
-
-
-		<section id="banner">
-
-		</section>
-
-					<!-- Two -->
-
-						<section class="wrapper style1 container special">
-
-							<div class="row">
-
-								<div class="4u 12u(narrower)">
-
-
-
-									<section>
-
-										<header>
-
-											<h3>INGENIERÍA DE CONTROL</h3>
-
-										</header>
-
-										<p>Algunos de nuestros servicios son: Evaluación y Análisis de Requerimientos, Diseño de Lazos de Control, Pruebas FAT, entre otros.</p>
-
-						  <footer>
-
-											<ul class="buttons">
-
-												<li><a href="ingenieriadecontrol.html" class="button small">LEER MÁS</a></li>
-
-											</ul>
-
-										</footer>
-
-									</section>
-
-
-
-								</div>
-
-								<div class="4u 12u(narrower)">
-
-
-
-									<section>
-
-										<header>
-
-											<h3>INGENIERÍA DE PRUEBA</h3>
-
-										</header>
-
-										<p>Algunos de nuestros servicios son: Evaluación y Análisis de Requerimientos, Desarrollo de Casos de Prueba, Recolección y Análisis de Datos, entre otros.</p>
-
-										<footer>
-
-											<ul class="buttons">
-
-												<li><a href="ingenieriadeprueba.html" class="button small">LEER MÁS</a></li>
-
-											</ul>
-
-										</footer>
-
-									</section>
-
-
-
-								</div>
-
-								<div class="4u 12u(narrower)">
-
-
-
-									<section>
-
-										<header>
-
-											<h3>LABORATORIO DE DISEÑO</h3>
-
-										</header>
-
-										<p>Algunos de nuestros servicios de Diseño Electrónico son: Diseño de Esquemáticos (EDA), Simulación y Síntesis de Circuitos, entre otros.</p>
-
-						  <footer>
-
-											<ul class="buttons">
-
-												<li><a href="laboratoriodediseno.html" class="button small">LEER MÁS</a></li>
-
-											</ul>
-
-										</footer>
-
-									</section>
-
-
-
-								</div>
-
-							</div>
-
-						</section>
-
-
-
-				</article>
-
-
+{% block content %}
+            {% endblock %}
 
 			<!-- Footer -->
 
@@ -244,21 +94,21 @@
 
 		<!-- Scripts -->
 
-			<script src="assets/js/jquery.min.js"></script>
+			<script src="{% static "js/jquery.min.js" %}"></script>
 
-			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="{% static "js/jquery.dropotron.min.js" %}"></script>
 
-			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="{% static "js/jquery.scrolly.min.js" %}"></script>
 
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="{% static "js/jquery.scrollgress.min.js" %}"></script>
 
-			<script src="assets/js/skel.min.js"></script>
+			<script src="{% static "js/skel.min.js" %}"></script>
 
-			<script src="assets/js/util.js"></script>
+			<script src="{% static "js/util.js" %}"></script>
 
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 
-			<script src="assets/js/main.js"></script>
+			<script src="{% static "js/main.js" %}"></script>
 
 
 

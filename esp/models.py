@@ -8,6 +8,7 @@ class Esp_inicio(models.Model):
     def clean_titulo(self):
         titulo = self.cleaned_data.get('titulo')
         return titulo
+
 class Esp_nosotros(models.Model):
     titulo = models.CharField(max_length=30)
     contenido = models.CharField(max_length=30)

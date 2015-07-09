@@ -18,5 +18,6 @@ from django.contrib import admin
 from esp import views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^espanol/', views.esp_inicio, name='inicio')
+    url(r'^inicio/', views.esp_inicio, name='inicio'),
+    url(r'^nosotros/', views.esp_nosotros, name='nosotros'),
 ]
