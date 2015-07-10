@@ -4,7 +4,7 @@ from .models import Esp_inicio
 
 
 def esp_inicio(request):
-    titulo = Esp_inicio.objects.all()
+    titulo = Esp_inicio.objects.get(publicado=True)
     context = {
 
         "temp_titulo": titulo

@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from esp.models import Esp_inicio
+
+
+class Esp_inicioAdmin(admin.ModelAdmin):
+    fields =  ['titulo', 'contenido', 'publicado']
+
+    admin.site.register(Esp_inicio)
+
