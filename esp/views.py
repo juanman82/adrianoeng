@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Esp_inicio
+from .models import Esp_productos
+
 
 
 
@@ -16,7 +18,7 @@ def esp_inicio(request):
 
 
 def esp_nosotros(request):
-    titulo = Esp_inicio.objects.get(publicado=True)
+    titulo = Esp_productos.objects.get(publicado=True)
 
     contenido = titulo.contenido
     context = {

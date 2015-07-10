@@ -39,12 +39,12 @@ class Esp_contacto(models.Model):
 
 
 class Esp_productos(models.Model):
-    producto = models.CharField(max_length=100)
-    imagen = models.ImageField
-    descripcion = models.TextField
+    producto = models.CharField(max_length=100, null=False)
+    imagen = models.ImageField(null=True)
+    descripcion = models.TextField(null=True)
     class Meta:
         verbose_name_plural = 'Productos'
 
     def __str__(self):
-        titulo = self.nombre
+        titulo = self.producto
         return titulo
