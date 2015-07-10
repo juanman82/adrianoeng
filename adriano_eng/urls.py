@@ -20,4 +20,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^inicio/', views.esp_inicio, name='inicio'),
     url(r'^nosotros/', views.esp_nosotros, name='nosotros'),
+
 ]
+admin.site.site_header = 'AdrianoEng'

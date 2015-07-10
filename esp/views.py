@@ -5,6 +5,7 @@ from .models import Esp_inicio
 
 def esp_inicio(request):
     titulo = Esp_inicio.objects.get(publicado=True)
+
     contenido = titulo.contenido
     context = {
 
