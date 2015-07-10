@@ -1,8 +1,25 @@
-{% extends "espanol/base.html" %}
+{% extends "espanol/base.html"  %}
 
 
+{% load staticfiles %}
 
+
+<div ></div>
 
 {% block content %}
-{{ temp_titulo }}
+    <div class="special container">
+   <div class="row">
+  <div ><div class="jumbotron" style="text-align: center">
+  <h1>{{ temp_titulo }}</h1>
+  <div style="text-align: justify">>
+  <p>{{ temp_contenido }}</p></div>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
+  </div>
+
+
+
+
+
+</div>
 {% endblock %}
