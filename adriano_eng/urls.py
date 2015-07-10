@@ -17,9 +17,12 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from esp import views
 urlpatterns = [
+    url(r'^$', views.esp_inicio, name='inicio'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^inicio/', views.esp_inicio, name='inicio'),
     url(r'^nosotros/', views.esp_nosotros, name='nosotros'),
+    # url(r'^productos/', views.esp_productos, name='productos'),
+    # url(r'^contacto/', views.esp_contacto, name='contacto'),
 
 ]
 admin.site.site_header = 'AdrianoEng'

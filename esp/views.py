@@ -16,7 +16,15 @@ def esp_inicio(request):
 
 
 def esp_nosotros(request):
-    return render(request, "espanol/nosotros.html")
+    titulo = Esp_inicio.objects.get(publicado=True)
+
+    contenido = titulo.contenido
+    context = {
+
+        "temp_titulo": titulo,
+        "temp_contenido": contenido,
+    }
+    return render(request, "espanol/nosotros.html", context)
 
 
 def home(request):
