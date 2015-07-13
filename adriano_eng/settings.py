@@ -34,6 +34,8 @@ INSTALLED_APPS = (
     'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
+    'registration',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'adriano_eng.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,"templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,7 +107,20 @@ MEDIA_ROOT = os.path.join(PROJECT_DIR,'media')
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(PROJECT_DIR,'static')
 STATIC_URL = '/static/'
-
+SITE_ID = '1'
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,  'templates'),
+    os.path.join(os.path.dirname(__file__), 'template').replace('\\','/'),
 )
+
+
+REGISTRATION_AUTO_LOGIN = True
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
+REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
+
+
+EMAIL_HOST = 'mail.monographics.com.mx'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'reg@monographics.com.mx'
+EMAIL_HOST_PASSWORD = 'butanona'
+DEFAULT_FROM_EMAIL = 'juan.ag@monographics.com.mx'
+
