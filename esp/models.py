@@ -5,8 +5,10 @@ from django.db import models
 
 # Create your models here.
 class Esp_inicio(models.Model):
-    titulo = models.CharField(max_length=100)
-    contenido = models.TextField()
+    titulo = models.CharField(max_length=100, null=False)
+    descripcion = models.CharField(max_length=100, null=True)
+    imagen = models.ImageField( null=True)
+    contenido = models.TextField( null=True)
     publicado = models.BooleanField(default=True)
     class Meta:
         verbose_name_plural = "Inicio"
@@ -18,9 +20,12 @@ class Esp_inicio(models.Model):
 
 
 class Esp_nosotros(models.Model):
-    titulo = models.CharField(max_length=100)
-    contenido = models.TextField()
+    titulo = models.CharField(max_length=100, null=False)
+    descripcion = models.CharField(max_length=150,  null=True)
+    imagen = models.ImageField( null=True)
+    contenido = models.TextField(null=False)
     publicado = models.BooleanField(default=True)
+
     class Meta:
         verbose_name_plural = 'Nosotros'
 
@@ -30,8 +35,8 @@ class Esp_nosotros(models.Model):
 
 
 class Esp_contacto(models.Model):
-    nombre = models.CharField(max_length=100)
-    mensaje = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=100, null=False)
+    mensaje = models.CharField(max_length=100, null=False)
     email = models.EmailField(null=False)
     class Meta:
         verbose_name_plural = 'Contacto'

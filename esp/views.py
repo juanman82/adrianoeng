@@ -6,9 +6,9 @@ from .models import Esp_productos
 
 
 def esp_inicio(request):
-    titulo = Esp_inicio.objects.get(publicado=True)
-
-    contenido = titulo.contenido
+    inicio = Esp_inicio.objects.get(publicado=True)
+    titulo = inicio.contenido
+    contenido = contenido.contenido
     context = {
 
         "temp_titulo": titulo,
