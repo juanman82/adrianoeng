@@ -1,14 +1,14 @@
 from django.db import models
-
+from django_markdown.models import MarkdownField
 
 
 
 # Create your models here.
 class Esp_inicio(models.Model):
     titulo = models.CharField(max_length=100, null=False)
-    descripcion = models.CharField(max_length=100, null=True)
-    imagen = models.ImageField( null=True)
-    contenido = models.TextField( null=True)
+    descripcion = MarkdownField(null=True)
+    imagen = models.ImageField(null=True)
+    contenido = MarkdownField(null=True)
     publicado = models.BooleanField(default=True)
     class Meta:
         verbose_name_plural = "Inicio"

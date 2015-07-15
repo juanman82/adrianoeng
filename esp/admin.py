@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django_markdown.admin import MarkdownModelAdmin
 
 from esp.models import Esp_inicio
 from esp.models import Esp_nosotros
@@ -9,7 +10,7 @@ from esp.models import Esp_productos
 class Esp_inicioAdmin(admin.ModelAdmin):
     fields =  ['titulo', 'contenido', 'publicado']
 
-    admin.site.register(Esp_inicio)
+    admin.site.register(Esp_inicio, MarkdownModelAdmin)
 
 class Esp_nosotrosAdmin(admin.ModelAdmin):
     fields =  ['titulo', 'contenido', 'publicado']
