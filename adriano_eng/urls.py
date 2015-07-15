@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^nosotros/', views.esp_nosotros, name='nosotros'),
     url('^markdown/', include( 'django_markdown.urls')),
     url(r'^accounts/', include('registration.backends.default.urls')),
-    # url(r'^productos/', views.esp_productos, name='productos'),
+    url(r'^productos/', views.esp_productos, name='productos'),
     # url(r'^contacto/', views.esp_contacto, name='contacto'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
