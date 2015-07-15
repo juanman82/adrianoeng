@@ -7,12 +7,16 @@ from .models import Esp_productos
 
 def esp_inicio(request):
     inicio = Esp_inicio.objects.get(publicado=True)
-    titulo = inicio.contenido
-    contenido = contenido.contenido
+    titulo = inicio.titulo
+    contenido = inicio.contenido
+    descripcion = inicio.descripcion
+    imagen = inicio.imagen
     context = {
 
         "temp_titulo": titulo,
+        "temp_descripcion": descripcion,
         "temp_contenido": contenido,
+        "temp_imagen": imagen,
     }
     return render(request, "espanol/inicio.html", context)
 
