@@ -50,6 +50,7 @@ class Esp_productos(models.Model):
     producto = models.CharField(max_length=100, null=False)
     imagen = models.ImageField(null=True)
     descripcion = MarkdownField(null=True)
+    publicado = models.BooleanField(default=True)
 
     class Meta:
         verbose_name_plural = 'Productos'

@@ -4,30 +4,62 @@
 {% load staticfiles %}
 
 
-<div ></div>
 
 {% block content %}
-    <div class="special container">
-   <div class="row">
-  <div ><div class="jumbotron" style="text-align: center">
-  <h1>{{ temp_titulo }}</h1>
-  <div style="text-align: justify">
-  <p>{{ temp_descripcion }}</p></div>
 
-</div>
-      <div style="text-align: justify">
-  <p><img src="/media/{{temp_imagen}}" style="height: 400px"/></p></div>
+{% if queryset %}
+<h1></h1></br>
+            {% for  ins in queryset %}
 
-</div>
-       <div style="text-align: justify">
-  <p>{{ temp_contenido }}</p></div>
+                <div class="conteiner-fluid" align="left" style=" margin-left: 50px; margin-right:30px;  text-align: justify;">
 
-</div>
-  </div>
+                <div class="row">
+
+<table>
+    <tr>
+
+        <td><div style="width: 100%" align="center"><h1>{{ ins.titulo }}</h1></br></div></td>
 
 
 
+    </tr>
+
+    <tr> <td> <div >{{ ins.descripcion }}
+
+            </div></td></tr>
+
+    <tr>
+
+        <td><div  align="center"> <p><img src="/media/{{ins.imagen }}" height="500"  alt="{{ ins.titulo }}" > </h1></br></div></td>
 
 
-</div>
+
+    </tr>
+
+<tr> <td> <div >{{ ins.contenido }}
+
+            </div></td></tr>
+</table>
+
+
+                   </div></div>
+
+
+
+
+
+
+
+
+
+
+
+            {% endfor %}
+
+{% else %}
+    {% endif %}
+
+
+
+
 {% endblock %}
