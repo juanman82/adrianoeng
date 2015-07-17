@@ -1,0 +1,94 @@
+Index: esp/admin.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- esp/admin.py	(date 1436915537000)
++++ esp/admin.py	(revision )
+@@ -1,4 +1,5 @@
+ from django.contrib import admin
++from django_markdown.admin import MarkdownModelAdmin
+ 
+ from esp.models import Esp_inicio
+ from esp.models import Esp_nosotros
+@@ -9,7 +10,7 @@
+ class Esp_inicioAdmin(admin.ModelAdmin):
+     fields =  ['titulo', 'contenido', 'publicado']
+ 
+-    admin.site.register(Esp_inicio)
++    admin.site.register(Esp_inicio, MarkdownModelAdmin)
+ 
+ class Esp_nosotrosAdmin(admin.ModelAdmin):
+     fields =  ['titulo', 'contenido', 'publicado']
+Index: adriano_eng/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- adriano_eng/urls.py	(date 1436915537000)
++++ adriano_eng/urls.py	(revision )
+@@ -13,18 +13,20 @@
+     1. Add an import:  from blog import urls as blog_urls
+     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
+ """
+-
++from django.conf import settings
+ from django.conf.urls import include, url
+ from django.contrib import admin
+ from esp import views
++from django.conf.urls.static import static
+ urlpatterns = [
+     url(r'^$', views.esp_inicio, name='inicio'),
+     url(r'^admin/', include(admin.site.urls)),
+     url(r'^inicio/', views.esp_inicio, name='inicio'),
+     url(r'^nosotros/', views.esp_nosotros, name='nosotros'),
++    url('^markdown/', include( 'django_markdown.urls')),
+     url(r'^accounts/', include('registration.backends.default.urls')),
+     # url(r'^productos/', views.esp_productos, name='productos'),
+     # url(r'^contacto/', views.esp_contacto, name='contacto'),
+ 
+-]
++]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ admin.site.site_header = 'AdrianoEng'
+\ No newline at end of file
+Index: esp/models.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- esp/models.py	(date 1436915537000)
++++ esp/models.py	(revision )
+@@ -1,14 +1,14 @@
+ from django.db import models
++from django_markdown.models import MarkdownField
+ 
+ 
+ 
+-
+ # Create your models here.
+ class Esp_inicio(models.Model):
+     titulo = models.CharField(max_length=100, null=False)
+-    descripcion = models.CharField(max_length=100, null=True)
++    descripcion = MarkdownField(null=True)
+-    imagen = models.ImageField( null=True)
++    imagen = models.ImageField(null=True)
+-    contenido = models.TextField( null=True)
++    contenido = MarkdownField(null=True)
+     publicado = models.BooleanField(default=True)
+     class Meta:
+         verbose_name_plural = "Inicio"
+Index: adriano_eng/settings.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- adriano_eng/settings.py	(date 1436915537000)
++++ adriano_eng/settings.py	(revision )
+@@ -41,6 +41,7 @@
+     'django.contrib.messages',
+     'django.contrib.staticfiles',
+     'esp',
++    'django_markdown',
+ )
+ 
+ MIDDLEWARE_CLASSES = (
