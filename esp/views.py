@@ -32,7 +32,7 @@ def esp_nosotros(request):
     "queryset": queryset
 
     }
-    return render(request, "espanol/inicio.html", context)
+    return render(request, "espanol/nosotros.html", context)
 
 def esp_productos(request):
     queryset = Esp_productos.objects.filter(publicado=1).order_by('-id')

@@ -6,6 +6,25 @@
 
 
 {% block content %}
+<section id="banner">
+
+					<!--
+						".inner" is set up as an inline-block so it automatically expands
+						in both directions to fit whatever's inside it. This means it won't
+						automatically wrap lines, so be sure to use line breaks where
+						appropriate (<br />).
+					-->
+					<div class="inner">
+
+						<header>
+						  <p>&nbsp;</p>
+						  <p><img src="{% static 'images/logo_ae.png' %}" alt="adrianoengineering" width="316" height="148" hspace="10" vspace="100">
+					      </p>
+						  <h3><strong>InnovaciÓN, DISEÑO E INGENIERÍA DE ALTA TECNOLOGÍA</strong></h3>
+					  </header>
+					</div>
+
+		  </section>
 
 {% if queryset %}
 <h1></h1></br>
@@ -55,6 +74,7 @@
 
 
             {% endfor %}
+
 
 {% else %}
     {% endif %}
