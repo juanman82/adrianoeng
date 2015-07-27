@@ -13,7 +13,13 @@ class Esp_inicioAdmin(admin.ModelAdmin):
     admin.site.register(Esp_inicio, MarkdownModelAdmin)
 
 class Esp_nosotrosAdmin(admin.ModelAdmin):
-    fields =  ['titulo', 'contenido', 'publicado']
+    fields =  ['titulo', 'descripcion','imagen', 'titulo2', 'descripcion2', 'titulop1', 'producto1', 'titulop2', 'producto2', 'titulop3', 'producto3' ,'publicado']
+
+
+
+
+
+
 
     admin.site.register(Esp_nosotros)
 

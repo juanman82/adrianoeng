@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'esp',
     'django_markdown',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -110,7 +111,7 @@ STATIC_ROOT = os.path.join(PROJECT_DIR,'static')
 STATIC_URL = '/static/'
 SITE_ID = '1'
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'template').replace('\\','/'),
+    os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
 )
 
 

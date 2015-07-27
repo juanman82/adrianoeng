@@ -1,3 +1,5 @@
+
+# -*- coding: utf-8 -*-
 from django.db import models
 from django_markdown.models import MarkdownField
 
@@ -23,7 +25,14 @@ class Esp_nosotros(models.Model):
     titulo = models.CharField(max_length=100, null=False)
     descripcion = MarkdownField(null=True)
     imagen = models.ImageField(null=True)
-    contenido = MarkdownField(null=True)
+    titulo2 = models.CharField(max_length=100, null=True)
+    descripcion2 = MarkdownField(null=True)
+    titulop1 = models.CharField(max_length=100, null=True)
+    producto1 = MarkdownField(null=True)
+    titulop2 = models.CharField(max_length=100, null=True)
+    producto2 = MarkdownField(null=True)
+    titulop3 = models.CharField(max_length=100, null=True)
+    producto3 = MarkdownField(null=True)
     publicado = models.BooleanField(default=True)
 
     class Meta:
@@ -53,8 +62,22 @@ class Esp_productos(models.Model):
     publicado = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name_plural = 'Productos'
+        verbose_name_plural = 'INGENIERÍA DE CONTROL'
 
     def __str__(self):
         producto = self.producto
         return producto
+
+
+class Esp_Ingenieria_servicios(models.Model):
+    producto = models.OneToOneField(Esp_productos, null=True)
+    servicio = models.CharField(max_length=100, null=False)
+    imagen = models.ImageField(null=True)
+    publicado = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name_plural = 'Ingeniería de Control'
+
+    def __str__(self):
+        servicio = self.servicio
+        return servicio
