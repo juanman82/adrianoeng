@@ -62,21 +62,21 @@ class Esp_productos(models.Model):
     publicado = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name_plural = 'INGENIERÍA DE CONTROL'
+        verbose_name_plural = 'Productos'
 
     def __str__(self):
         producto = self.producto
         return producto
 
 
-class Esp_Ingenieria_servicios(models.Model):
+class Esp_Servicios(models.Model):
     producto = models.OneToOneField(Esp_productos, null=True)
     servicio = models.CharField(max_length=100, null=False)
     imagen = models.ImageField(null=True)
     publicado = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name_plural = 'Ingeniería de Control'
+        verbose_name_plural = 'Servicios'
 
     def __str__(self):
         servicio = self.servicio

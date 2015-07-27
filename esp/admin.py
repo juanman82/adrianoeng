@@ -5,6 +5,7 @@ from esp.models import Esp_inicio
 from esp.models import Esp_nosotros
 from esp.models import Esp_contacto
 from esp.models import Esp_productos
+from esp.models import Esp_Servicios
 
 
 class Esp_inicioAdmin(admin.ModelAdmin):
@@ -32,3 +33,9 @@ class Esp_productosAdmin(admin.ModelAdmin):
     fields =  ['producto', 'imagen', 'descripcion']
 
     admin.site.register(Esp_productos)
+
+class Esp_ServiciosAdmin(admin.ModelAdmin):
+    fields =  ['producto',  'servicio', 'imagen', 'publicado',]
+
+    admin.site.register(Esp_Servicios)
+
